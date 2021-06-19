@@ -1,0 +1,99 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.btn {
+  &:hover {
+    &:before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background-color: transparent;
+      transition: all linear 0.75s;
+    }
+  }
+
+  &.back-btn-animated {
+    &:hover {
+      &:before {
+        transition: all linear 0.75s;
+        background-color: theme("colors.yellow.200");
+        animation: growLeft 0.75s linear forwards;
+      }
+    }
+  }
+
+  &.refresh-btn-animated {
+    &:hover {
+      &:before {
+        transition: all linear 0.75s;
+        background-color: theme("colors.red.300");
+        animation: boxShadowGrow 1s linear forwards;
+      }
+    }
+  }
+
+  &.next-btn-animated {
+    &:hover {
+      &:before {
+        transition: all linear 0.75s;
+        background-color: theme("colors.green.300");
+        animation: growRight 1s linear forwards;
+      }
+    }
+  }
+}
+
+@keyframes growLeft {
+  0% {
+    transform: translateX(0px);
+  }
+
+  50% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes growRight {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  50% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes boxShadowGrow {
+  0% {
+    box-shadow: 0px 0px 10px 0px #967383;
+  }
+
+  25% {
+    box-shadow: 0px 0px 15px 3px #967383;
+  }
+
+  50% {
+    box-shadow: 0px 0px 20px 5px #967383;
+  }
+
+  75% {
+    box-shadow: 0px 0px 15px 3px #967383;
+  }
+
+  100% {
+    box-shadow: 0px 0px 10px 0px #967383;
+  }
+}
