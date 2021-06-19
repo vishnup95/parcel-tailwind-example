@@ -1,7 +1,10 @@
-/.yarn/*
-/.parcel-cache
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
 
-# Swap the comments on the following lines if you don't wish to use zero-installs
-# Documentation here: https://yarnpkg.com/features/zero-installs
+/.parcel-cache
 /dist
-#/.pnp.*
