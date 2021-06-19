@@ -3,10 +3,9 @@
   "scripts": {
     "start": "npm-run-all --parallel 'watch:*'",
     "build": "npm-run-all --parallel 'prod:*'",
-    "watch:start": "parcel serve index.html",
-    "watch:css": "tailwindcss -i style.css -o tailwind.css -w",
-    "prod:build": "parcel build index.html",
-    "prod:css": "NODE_ENV=production tailwindcss -i tailwind.css -o prod.css --minify"
+    "watch:start": "parcel serve src/index.html",
+    "watch:css": "tailwindcss -i src/style.css -o src/assets/tailwind/tailwind.css -w",
+    "prod:build": "parcel build src/index.html --no-source-maps --no-cache"
   },
   "browserslist": "> 0.2%",
   "devDependencies": {
